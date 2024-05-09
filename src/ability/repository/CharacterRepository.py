@@ -4,8 +4,8 @@ import pymysql
 class Connection:
     def __init__(self):
         self.host = '127.0.0.1'
-        self.user = 'root'
-        self.password = 'hsh040312!'
+        self.user = 'discord'
+        self.password = 'discord'
         self.db = 'character_data'
         self.conn = pymysql.connect(host=self.host, user=self.user, password=self.password, db=self.db)
         self.cur = self.conn.cursor(pymysql.cursors.DictCursor)
