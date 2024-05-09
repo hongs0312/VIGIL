@@ -1,4 +1,4 @@
-file = open("../../../../VIGIL/data/character_information.txt", "r")
+file = open("/data/character_information.txt", "r")
 
 while True:
     line = file.readline()
