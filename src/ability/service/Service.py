@@ -21,7 +21,7 @@ def embed_info(character_name, skill_type):
     if skill is None:
         return "Skill not found"
 
-    image = discord.File(f"../data/imgs/{skill['image']}", filename="image.png")
+    image = discord.File(f"../data/skill_imgs/{skill['image']}", filename="image.png")
 
     embed = discord.Embed(title=skill['name'], color=0x00ff00)
     embed.set_thumbnail(url="attachment://image.png")
