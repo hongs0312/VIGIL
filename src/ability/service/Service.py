@@ -1,7 +1,5 @@
 import os
-import sys
 import discord
-#sys.path.append("src")
 from ability.repository.CharacterRepository import *
 
 cwd = os.getcwd()
