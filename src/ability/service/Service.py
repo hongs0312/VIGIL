@@ -11,7 +11,7 @@ repo = CharacterRepository()
 
 
 def embed_info(character_name, skill_type):
-    character = repo.get_character(character_name)
+    character = repo.get_character(character_name.lower())
 
     if character is None:
         return "Character not found"
