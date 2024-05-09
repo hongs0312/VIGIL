@@ -1,8 +1,7 @@
 import os
 import sys
-sys.path.append("src")
-
 import discord
+#sys.path.append("src")
 from ability.repository.CharacterRepository import *
 
 cwd = os.getcwd()
@@ -40,7 +39,7 @@ def embed_info(character_name, skill_type):
     if skill['feature'] != "":
         embed.add_field(name="Feature", value=skill['feature'], inline=False)
 
-    embed.add_field(name="Cooldown", value=f"{skill['cooldown']} (s)", inline=False)
+    embed.add_field(name="Cooldown", value=skill['cooldown'], inline=False)
 
     if skill['damage'] != "0":
         embed.add_field(name="Damage", value=skill['damage'], inline=False)
