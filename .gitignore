@@ -1,4 +1,4 @@
 .venv/
 
 # 캐릭터 정보파일 및 데이터 파일
-data/check_file.py
+data/ability/check_file.py

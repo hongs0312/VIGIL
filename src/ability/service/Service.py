@@ -17,19 +17,23 @@ def embed_info(character_name, skill_type):
         return "Character not found"
 
     skill = repo.get_skill(character[skill_type])
-    if skill is None:
+    if character[skill_type] == 0 or skill is None:
         return "Skill not found"
 
     try:
-        image = discord.File(f"../data/skill_imgs/{skill['image']}", filename="image.png")
+        image = discord.File(f"../data/ability/imgs/{skill['image']}", filename="image.png")
     except:
-        image = discord.File(f"../data/skill_imgs/rick.jpg", filename="image.png")
+        image = discord.File(f"../data/ability/imgs/rick.jpg", filename="image.png")
 
     title = skill['name']
-    if skill_type == 'passive':
-        title += " / 패시브"
-    elif skill['damage'] != "0":
-        title += " / 어택"
+    if skill_type == "primary":
+        title += " (주 스킬)"
+    elif skill_type == "secondary":
+        title += " (보조 스킬)"
+    elif skill_type == "special":
+        title += " (특수 스킬)"
+    elif skill_type == "passive":
+        title += " (패시브)"
 
     embed = discord.Embed(title=title, color=0xC71585)
     embed.set_thumbnail(url="attachment://image.png")
