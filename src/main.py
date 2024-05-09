@@ -2,7 +2,6 @@ from discord.ext import commands
 from discord import Intents
 from discord import Status
 
-
 TOKEN = "MTIzNjMyNjcwNzA4NzE1MTE4OQ.GBPleF.7YYGXUPoVUU_Zj7eu-YusL6hT-JTKC7ZGVCZUo"
 
 
