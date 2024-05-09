@@ -35,7 +35,7 @@ class CharacterRepository:
 
     def add_character(self, name):
         conn, cur = self.connection.get_connection()
-        query = "INSERT INTO character_information VALUES(%s, %s, 0, 0, 0)"
+        query = "INSERT INTO character_information VALUES(%s, %s, 0, 0, 0, 0)"
         cur.execute(query, (self.character_count+1, name))
         conn.commit()
         self.character_count += 1
@@ -45,7 +45,7 @@ class CharacterRepository:
 
     def get_character(self, name):
         conn, cur = self.connection.get_connection()
-        query = "SELECT * FROM character_information WHERE lower(name) = %s"
+        query = "SELECT * FROM character_information WHERE name = %s"
         cur.execute(query, name.lower())
         return cur.fetchone()
 
