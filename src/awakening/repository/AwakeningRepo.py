@@ -1,4 +1,7 @@
+import sys
 import pymysql
+
+sys.path.append("../..")
 from db_connection.mariaDB_connection import Connection
 
 class AwakeningRepo:
@@ -37,8 +40,14 @@ class AwakeningRepo:
 
     def get_awakening_by_name(self, name):
         conn, cur = self.connection.get_connection()
-        query = "SELECT * FROM awakening_information WHERE name = %s"
-        cur.execute(query, name)
+        query = "SELECT * FROM awakening_information WHERE REPLACE(name, ' ', '') = %s"
+        cur.execute(query, name.replace(" ", ""))
+        return cur.fetchone()
+
+    def get_awakening_by_aka(self, aka):
+        conn, cur = self.connection.get_connection()
+        query = "SELECT * FROM awakening_information WHERE aka = %s"
+        cur.execute(query, aka)
         return cur.fetchone()
 
     def get_all_awakenings(self):
@@ -46,3 +55,26 @@ class AwakeningRepo:
         query = "SELECT * FROM awakening_information"
         cur.execute(query)
         return cur.fetchall()
+
+    def delete_awakening(self, awakening_id):
+        conn, cur = self.connection.get_connection()
+        query = "DELETE FROM awakening_information WHERE id = %s"
+        cur.execute(query, awakening_id)
+        conn.commit()
+        self.awakening_count -= 1
+
+    def clear_repository(self):
+        conn, cur = self.connection.get_connection()
+        query = "TRUNCATE TABLE awakening_information"
+        cur.execute(query)
+        conn.commit()
+        self.awakening_count = 0
+
+
+if __name__ == "__main__":
+    repo = AwakeningRepo()
+
+    print(repo.get_awakening_by_name("강한 충돌"))
+    print(repo.get_awakening_by_aka("강충"))
+
+    # repo.clear_repository()

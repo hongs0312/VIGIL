@@ -4,5 +4,6 @@
 데이터 제작 : 이준희
 
 ## 명령어 목록
-> * ?ability (캐릭터 이름) (primary, secondary, special)<br/>
-> * 추가 예정<br/>
+> * ?ability (캐릭터 이름) (primary, secondary, special, passive, strike)
+> * ?awakening list
+> * ?awakening (각성 이름)
