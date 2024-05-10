@@ -35,7 +35,7 @@ class CharacterRepository:
 
     def add_character(self, name):
         conn, cur = self.connection.get_connection()
-        query = "INSERT INTO character_information VALUES(%s, %s, 0, 0, 0, 0)"
+        query = "INSERT INTO character_information VALUES(%s, %s, 0, 0, 0, 0, 0)"
         cur.execute(query, (self.character_count+1, name))
         conn.commit()
         self.character_count += 1
@@ -71,10 +71,10 @@ class CharacterRepository:
         # return skill_id
         return self.skill_count
 
-    def update_skill(self, skill_id, name, cooldown, damage, description, features, image):
+    def update_skill(self, skill_id, name, cooldown, damage, description, image, features):
         conn, cur = self.connection.get_connection()
-        query = "UPDATE skill_information SET name = %s, cooldown = %s, damage = %s, duration = %s, features = %s, image = %s WHERE id = %s"
-        cur.execute(query, (name, cooldown, damage, description, features, image, skill_id))
+        query = "UPDATE skill_information SET name=%s, cooldown=%s, damage=%s, description=%s, image=%s, feature=%s WHERE id=%s"
+        cur.execute(query, (name, cooldown, damage, description, image, features, skill_id))
         conn.commit()
 
     def get_skill(self, skill_id):
@@ -91,7 +91,7 @@ class CharacterRepository:
 
     def link_character_and_skill(self, character_id, skill_type, skill_id):
         conn, cur = self.connection.get_connection()
-        query = f"UPDATE character_information SET `{skill_type.lower()}`=%s WHERE  `id`=%s"
+        query = f"UPDATE character_information SET `{skill_type.lower()}`=%s WHERE `id`=%s"
         cur.execute(query, (skill_id, character_id))
         conn.commit()
 

@@ -29,6 +29,10 @@ while True:
     image = element[6]
     features = " / ".join(element[7:])
 
-    skill_id = repo.add_skill(skill_name, cooldown, damage, description, features, image)
-    repo.link_character_and_skill(character_id, skill_type, skill_id)
-
+    skill = repo.get_skill_by_name(skill_name)
+    if skill is None:
+        skill_id = repo.add_skill(skill_name, cooldown, damage, description, features, image)
+        repo.link_character_and_skill(character_id, skill_type, skill_id)
+    else:
+        repo.update_skill(skill['id'], skill_name, cooldown, damage, description, image, features)
+        repo.link_character_and_skill(character_id, skill_type, skill['id'])

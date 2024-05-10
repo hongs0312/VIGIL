@@ -30,6 +30,8 @@ def embed_info(character_name, skill_type):
         title += " (보조 스킬)"
     elif skill_type == "special":
         title += " (특수 스킬)"
+    elif skill_type == "strke":
+        title += " (스트라이크)"
     elif skill_type == "passive":
         title += " (패시브)"
 
