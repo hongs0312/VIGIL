@@ -1,6 +1,7 @@
 import discord
 from awakening.repository.AwakeningRepo import AwakeningRepo
 
+print("embed_info: ", end="")
 repo = AwakeningRepo()
 
 

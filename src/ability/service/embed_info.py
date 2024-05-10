@@ -1,6 +1,7 @@
 import discord
 from ability.repository.CharacterRepo import *
 
+print("embed_info: ", end="")
 repo = CharacterRepo()
 
 
