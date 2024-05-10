@@ -10,9 +10,7 @@ class CooldownBot(commands.Cog):
 
     @commands.command(name="awakening")
     async def cool(self, ctx, *args):
-        if len(args) != 2:
-            await ctx.send("Invalid arguments")
-            return
+        pass
 
 
 async def setup(bot: commands.Bot) -> None:

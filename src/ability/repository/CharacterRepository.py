@@ -1,7 +1,5 @@
 import sys
-
-sys.path.append("../data")
-from mariaDB_connection import Connection
+from db_connection.mariaDB_connection import Connection
 
 character_information_create = \
 "CREATE TABLE `character_information` (`id` INT(10) UNSIGNED NOT NULL,\

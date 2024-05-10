@@ -1,9 +1,5 @@
-import os
 import discord
 from ability.repository.CharacterRepository import *
-
-cwd = os.getcwd()
-print(cwd)
 
 repo = CharacterRepository()
 
