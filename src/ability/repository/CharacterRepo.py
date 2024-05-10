@@ -31,9 +31,10 @@ ENGINE=InnoDB\
 ;"
 
 
-class CharacterRepository:
+class CharacterRepo:
     def __init__(self):
-        self.connection = Connection()
+        # character_data DB 연결 객체
+        self.connection = Connection('character_data')
 
         self.character_count = self.get_row_count("character_information")
         self.skill_count = self.get_row_count("skill_information")

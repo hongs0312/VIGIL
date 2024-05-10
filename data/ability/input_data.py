@@ -1,11 +1,11 @@
 import sys
 sys.path.append("../../src")
 
-from ability.repository.CharacterRepository import CharacterRepository
+from ability.repository.CharacterRepo import CharacterRepo
 
-repo = CharacterRepository()
+repo = CharacterRepo()
 
-file = open("character_information.txt", "r", encoding='utf-8')
+file = open("character_data.txt", "r", encoding='utf-8')
 
 while True:
     line = file.readline()

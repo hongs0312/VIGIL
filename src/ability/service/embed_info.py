@@ -1,7 +1,7 @@
 import discord
-from ability.repository.CharacterRepository import *
+from ability.repository.CharacterRepo import *
 
-repo = CharacterRepository()
+repo = CharacterRepo()
 
 
 def embed_info(character_name, skill_type):
@@ -26,7 +26,7 @@ def embed_info(character_name, skill_type):
         title += " (보조 스킬)"
     elif skill_type == "special":
         title += " (특수 스킬)"
-    elif skill_type == "strke":
+    elif skill_type == "strike":
         title += " (스트라이크)"
     elif skill_type == "passive":
         title += " (패시브)"

@@ -9,8 +9,9 @@ class CooldownBot(commands.Cog):
         self.bot = bot
 
     @commands.command(name="awakening")
-    async def cool(self, ctx, *args):
-        pass
+    async def awakening(self, ctx, *args):
+        arg = " ".join(args)
+        await ctx.send(arg)
 
 
 async def setup(bot: commands.Bot) -> None:

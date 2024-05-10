@@ -13,7 +13,8 @@ class MyBot(commands.Bot):
             sync_command=True
         )
         self.initial_extension = [
-            "ability.Cog",
+            "ability.Ability",
+            "awakening.Awakening"
         ]
 
     async def setup_hook(self):
