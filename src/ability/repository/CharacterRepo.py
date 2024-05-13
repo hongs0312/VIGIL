@@ -1,4 +1,4 @@
-from ability.repository.Connection import Connection
+from db_connection.mariaDB_connection import Connection
 from ability.repository.sql import character_information_create, skill_information_create
 
 
