@@ -15,7 +15,7 @@ def embed_info(character_name, skill_type):
     try:
         image = discord.File(f"../data/ability/imgs/{skill['image']}", filename="image.png")
     except:
-        image = discord.File(f"../data/ability/imgs/rick.jpg", filename="image.png")
+        image = discord.File(f"../data/rick.jpg", filename="image.png")
 
     title = skill['name']
     if skill_type == "primary":

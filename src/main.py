@@ -14,7 +14,8 @@ class MyBot(commands.Bot):
         )
         self.initial_extension = [
             "ability.Ability",
-            "awakening.Awakening"
+            "awakening.Awakening",
+            "gear.Gear"
         ]
 
     async def setup_hook(self):

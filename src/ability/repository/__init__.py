@@ -1,3 +1,6 @@
+import sys
+sys.path.append("../../src")
+
 character_information_create = \
 "CREATE TABLE `character_information` (`id` INT(10) UNSIGNED NOT NULL,\
 	`name` CHAR(128) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\
