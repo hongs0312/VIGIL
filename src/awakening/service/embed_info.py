@@ -8,7 +8,10 @@ def embed_info(name):
     if awakening is None:
         return "Awakening not found"
 
-    image = discord.File(f"../data/awakening/imgs/{awakening['image']}", filename="image.png")
+    try:
+        image = discord.File(f"../data/awakening/imgs/{awakening['image']}", filename="image.png")
+    except:
+        image = discord.File(f"../data/awakening/imgs/rick.jpg", filename="image.png")
 
     title = awakening['name']
     embed = discord.Embed(title=title, color=0xC71585)

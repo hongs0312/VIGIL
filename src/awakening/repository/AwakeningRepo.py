@@ -1,8 +1,5 @@
-import sys
-import pymysql
-
-sys.path.append("../..")
 from db_connection.mariaDB_connection import Connection
+
 
 class AwakeningRepo:
     def __init__(self):

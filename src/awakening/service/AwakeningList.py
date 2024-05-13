@@ -1,4 +1,4 @@
-from src.awakening.service import repo
+from awakening.service import repo
 
 
 class AwakeningList:
