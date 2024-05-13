@@ -6,7 +6,7 @@ class Ability(commands.Cog):
     def __init__(self, bot: commands.Bot) -> None:
         self.bot = bot
 
-    @commands.command(name="ability")
+    @commands.command(name="skl")
     async def ability(self, ctx, *args):
         if len(args) != 2:
             await ctx.send("Invalid arguments")

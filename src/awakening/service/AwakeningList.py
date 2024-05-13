@@ -1,8 +1,4 @@
-import discord
-from awakening.repository.AwakeningRepo import AwakeningRepo
-
-print("AwakeningList: ", end="")
-repo = AwakeningRepo()
+from src.awakening.service import repo
 
 
 class AwakeningList:

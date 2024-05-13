@@ -1,4 +1,3 @@
-import sys
 from db_connection.mariaDB_connection import Connection
 
 character_information_create = \

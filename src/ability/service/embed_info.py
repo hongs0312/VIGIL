@@ -1,8 +1,5 @@
 import discord
-from ability.repository.CharacterRepo import *
-
-print("embed_info: ", end="")
-repo = CharacterRepo()
+from ability.service import repo
 
 
 def embed_info(character_name, skill_type):
