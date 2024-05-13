@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from gear.service.embed_info import embed_info
 
+
 class Gear(commands.Cog):
     def __init__(self, bot: commands.Bot) -> None:
         self.bot = bot
