@@ -7,8 +7,19 @@ class Ability(commands.Cog):
     def __init__(self, bot: commands.Bot) -> None:
         self.bot = bot
 
-    @commands.command(name="skl")
-    async def ability(self, ctx, *args):
+    @commands.group(name="skl")
+    async def ability_group(self, ctx: discord.ext.commands.Context):
+        if ctx.invoked_subcommand is None:
+            msg = "* ?skl list 로 목록을 확인할 수 있어요.\n"
+            msg += "* ?skl info <name> <skill type> 으로 정보를 확인할 수 있어요."
+
+            embed = discord.Embed(title="Ability command info", color=0xC71585)
+            embed.add_field(name="", value=msg, inline=False)
+
+            await ctx.send(embed=embed)
+
+    @ability_group.command(name="info")
+    async def ability_info(self, ctx, *args):
         if len(args) != 2:
             await ctx.send("Invalid arguments")
             return

@@ -10,12 +10,15 @@ class MyBot(commands.Bot):
         super().__init__(
             command_prefix='?',
             intents=Intents.all(),
-            sync_command=True
+            sync_command=True,
+            help_command = None
         )
         self.initial_extension = [
+            "help.Help",
             "ability.Ability",
             "awakening.Awakening",
-            "gear.Gear"
+            "gear.Gear",
+            "tierlist.Tierlist",
         ]
 
     async def setup_hook(self):

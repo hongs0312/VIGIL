@@ -4,6 +4,16 @@
 데이터 제작 : 이준희
 
 ## 명령어 목록
-> * ?ability (캐릭터 이름) (primary, secondary, special, passive, strike)
-> * ?awakening list
-> * ?awakening (각성 이름)
+> * ###  skl 
+>>?skl (캐릭터 이름) (primary, secondary, special, passive, strike)
+>
+> * ### awk
+>>?awk (각성 이름/aka) <br/>
+>>?awk list <br/>
+>>?awk list all <br/>
+>>?awk list (페이지) <br/>
+> 
+> * ###  gear
+>> ?gear forward<br/>
+>> ?gear goalie<br/>
+>>
