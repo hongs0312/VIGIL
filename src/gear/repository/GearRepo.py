@@ -1,4 +1,4 @@
-from src.db_connection.mariaDB_connection import Connection
+from db_connection.mariaDB_connection import Connection
 
 
 class GearRepo:
