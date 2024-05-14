@@ -14,7 +14,6 @@
 >>?skl info (캐릭터 이름) (primary, secondary, special, passive, strike)
 >
 > * ### awk
->>?awk (각성 이름/aka) <br/>
 >>?awk list <br/>
 >>?awk list all <br/>
 >>?awk list (페이지) <br/>
