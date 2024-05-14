@@ -25,6 +25,7 @@ class Help(commands.Cog):
         embed.add_field(name="Developer", value="hongs0312, sp!", inline=False)
         embed.add_field(name="Content", value=content, inline=False)
         embed.add_field(name="Command", value="?help를 쳐서 확인해주세요!", inline=False)
+        embed.add_field(name="Github", value="[hongs0312/VIGIL](https://github.com/hongs0312/VIGIL/)")
 
         await ctx.send(embed=embed)
 
