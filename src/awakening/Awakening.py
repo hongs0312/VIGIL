@@ -13,8 +13,8 @@ class Awakening(commands.Cog):
     @commands.group(name="awk")
     async def awakening_group(self, ctx: discord.ext.commands.Context):
         if ctx.invoked_subcommand is None:
-            msg = "* ?awk list 로 목록을 확인할 수 있어요.\n"
-            msg += "* ?awk info <name> 으로 정보를 확인할 수 있어요."
+            msg = ("* ?awk list 로 목록을 확인할 수 있어요.\n"
+                   "* ?awk info <name> 으로 정보를 확인할 수 있어요.")
 
             embed = discord.Embed(title="Awakening command info", color=0xC71585)
             embed.add_field(name="", value=msg, inline=False)
@@ -52,8 +52,8 @@ class Awakening(commands.Cog):
 
                 await ctx.send(embed=embed)
         else:   # ?awk list or ?awk list <invalid argument>
-            msg = "* ?awk list <page number> 를 이용해 페이지를 확인할 수 있어요.\n"
-            msg += "* ?awk list all 을 이용해 전체 목록을 확인할 수 있어요."
+            msg = ("* ?awk list <page number> 를 이용해 페이지를 확인할 수 있어요.\n"
+                   "* ?awk list all 을 이용해 전체 목록을 확인할 수 있어요.")
 
             embed = discord.Embed(title="Awakening List", description=f"Total page: {total_page}", color=0xC71585)
             embed.add_field(name="", value=msg, inline=False)

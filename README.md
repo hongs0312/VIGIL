@@ -25,4 +25,6 @@
 >>
 > * ###  tierlist
 >> ?tierlist goalie (캐릭터 이름)<br/>
->> 추가 예정: ?tierlsit forward (캐릭터 이름)<br/>
+>> <br/>
+>> 추가 예정: <br/>
+>> ?tierlsit forward (캐릭터 이름)<br/>
