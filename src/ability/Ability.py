@@ -1,6 +1,11 @@
 import discord
+from get_info_embed import get_info_embed
 from discord.ext import commands
 from ability.service.embed_info import *
+
+info_msg = [
+    ["?skl info (스트라이커 이름) (primary/secondary/special/passive)", "스킬 정보를 확인할 수 있습니다.\nex) ?skl info 아이.미 primary"],
+]
 
 
 class Ability(commands.Cog):
@@ -10,16 +15,12 @@ class Ability(commands.Cog):
     @commands.group(name="skl")
     async def ability_group(self, ctx: discord.ext.commands.Context):
         if ctx.invoked_subcommand is None:
-            msg = "* ?skl info <name> <skill type> 으로 정보를 확인할 수 있어요."
-
-            embed = discord.Embed(title="Ability command info", color=0xC71585)
-            embed.add_field(name="", value=msg, inline=False)
-
+            embed = get_info_embed("Abliity command info", info_msg)
             await ctx.send(embed=embed)
 
     @ability_group.command(name="info")
     async def ability_info(self, ctx, *args):
-        if len(args) != 2:
+        if len(args) < 2:
             await ctx.send("Invalid arguments")
             return
 

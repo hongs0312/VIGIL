@@ -1,6 +1,11 @@
 import discord
 from discord.ext import commands
+from get_info_embed import get_info_embed
 from tierlist.service.Service import get_image, get_name
+
+info_msg = [
+    ["?tierlist goalie (캐릭터 이름)", "골리 티어리스트를 확인할 수 있어요.\nex) ?tierlist goalie 아이.미"],
+]
 
 
 class Tierlist(commands.Cog):
@@ -10,11 +15,7 @@ class Tierlist(commands.Cog):
     @commands.group(name="tierlist")
     async def tierlist(self, ctx: discord.ext.commands.Context):
         if ctx.invoked_subcommand is None:
-            msg = "* ?tierlist <goalie> <캐릭터 이름> 으로 티어리스트를 확인할 수 있어요\n"
-
-            embed = discord.Embed(title="Tierlist command info", color=0xC71585)
-            embed.add_field(name="", value=msg, inline=False)
-
+            embed = get_info_embed("Tierlist command info", info_msg)
             await ctx.send(embed=embed)
 
     @tierlist.command(name="goalie")

@@ -1,7 +1,13 @@
 import discord
 from discord.ext import commands
+from get_info_embed import get_info_embed
 from gear.service.Service import get_all_gear_info
 from gear.service.embed_gear_info import embed_gear_info
+
+info_msg = [
+    ["?gear forward", "forward gear 정보를 확인할 수 있습니다."],
+    ["?gear goalie", "goalie gear 정보를 확인할 수 있습니다."],
+]
 
 
 class Gear(commands.Cog):
@@ -11,11 +17,7 @@ class Gear(commands.Cog):
     @commands.group(name="gear")
     async def gear_group(self, ctx: discord.ext.commands.Context):
         if ctx.invoked_subcommand is None:
-            msg = "* ?gear forward로 forward gear 정보를 확인할 수 있어요.\n"
-            msg += "* ?gear goalie로 goalie gear 정보를 확인할 수 있어요."
-
-            embed = discord.Embed(title="Gear command info", color=0xC71585)
-            embed.add_field(name="", value=msg, inline=False)
+            embed = get_info_embed("Gear command info", info_msg)
 
             await ctx.send(embed=embed)
 
