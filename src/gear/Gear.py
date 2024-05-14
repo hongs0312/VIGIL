@@ -9,7 +9,7 @@ class Gear(commands.Cog):
         self.bot = bot
 
     @commands.group(name="gear")
-    async def gear_group(self, ctx):
+    async def gear_group(self, ctx: discord.ext.commands.Context):
         if ctx.invoked_subcommand is None:
             msg = "* ?gear forward로 forward gear 정보를 확인할 수 있어요.\n"
             msg += "* ?gear goalie로 goalie gear 정보를 확인할 수 있어요."

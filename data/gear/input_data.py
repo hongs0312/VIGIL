@@ -3,7 +3,7 @@ import sys
 print(os.getcwd())
 sys.path.append("../../src")
 
-from gear.repository.GearRepo import GearRepo
+from gear.repository.GearRepo import *
 
 repo = GearRepo()
 

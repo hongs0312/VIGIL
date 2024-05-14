@@ -1,7 +1,7 @@
 import sys
 sys.path.append("../../src")
 
-from ability.repository.CharacterRepo import CharacterRepo
+from ability.repository.CharacterRepo import *
 
 repo = CharacterRepo()
 
