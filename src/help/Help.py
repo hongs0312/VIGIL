@@ -20,9 +20,8 @@ class Help(commands.Cog):
     @commands.command(name="release")
     async def release_command(self, ctx):
         content = ("**minor update**\n"
-                   "* help명령어 버그 수정\n"
-                   "* 개발자란 sp 추가...\n")
-        embed = discord.Embed(title="Release info (Ver 1.0.1)", color=0xC71585)
+                   "* ux 개선\n")
+        embed = discord.Embed(title="Release info (Ver 1.0.2)", color=0xC71585)
         embed.add_field(name="Release date", value="2024.05.14", inline=False)
         embed.add_field(name="Developer", value="hongs0312, sp!", inline=False)
         embed.add_field(name="Content", value=content, inline=False)
