@@ -2,7 +2,7 @@ from discord.ext import commands
 from discord import Intents
 from discord import Status
 
-TOKEN = input("put in your token: ")
+TOKEN = input()     # input your token here
 
 
 class MyBot(commands.Bot):
