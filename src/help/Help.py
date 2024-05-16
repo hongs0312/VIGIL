@@ -21,7 +21,7 @@ class Help(commands.Cog):
     async def release_command(self, ctx):
         content = "'아이.미' -> '아이미'로도 검색 가능하게 수정"
         embed = discord.Embed(title="Release info (Ver 1.0.1)", color=0xC71585)
-        embed.add_field(name="Release date", value="2024.05.14", inline=False)
+        embed.add_field(name="Release date", value="2024.05.16", inline=False)
         embed.add_field(name="Developer", value="hongs0312, sp!", inline=False)
         embed.add_field(name="Content", value=content, inline=False)
         embed.add_field(name="Command", value="?help를 쳐서 확인해주세요!", inline=False)

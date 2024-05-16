@@ -12,7 +12,7 @@ class MyBot(commands.Bot):
             command_prefix='?',
             intents=Intents.all(),
             sync_command=True,
-            help_command = None
+            help_command=None
         )
         self.initial_extension = [
             "help.Help",
