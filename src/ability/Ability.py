@@ -27,6 +27,9 @@ class Ability(commands.Cog):
         character_name = "".join(args[:-1])
         skill_type = args[-1]
 
+        if character_name.replace(" ", "") == "아이미":
+            character_name = "아이.미"
+
         embed, image = embed_info(character_name, skill_type)
 
         if isinstance(embed, discord.Embed):

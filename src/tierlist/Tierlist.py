@@ -21,6 +21,10 @@ class Tierlist(commands.Cog):
     @tierlist.command(name="goalie")
     async def goalie(self, ctx: discord.ext.commands.Context, *args):
         kor_name = " ".join(args)
+
+        if kor_name.replace(" ", "") == "아이미":
+            kor_name = "아이.미"
+
         eng_name = get_name(kor_name)
 
         if eng_name == "":

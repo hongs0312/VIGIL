@@ -1,6 +1,7 @@
 from discord.ext import commands
 from discord import Intents
-from discord import Status
+
+import discord
 
 TOKEN = input()     # input your token here
 
@@ -32,7 +33,10 @@ class MyBot(commands.Bot):
         print(f"id: {self.user.id}")
         print("==============================")
 
-        await self.change_presence(status=Status.online)
+        game = discord.Game("?release / Omega Strikers")
+        status = discord.Status.online
+
+        await self.change_presence(status=status, activity=game)
 
 
 bot = MyBot()
