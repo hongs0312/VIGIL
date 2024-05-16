@@ -45,3 +45,21 @@ def embed_info(character_name, skill_type):
     embed.add_field(name="Description", value=skill['description'], inline=False)
 
     return embed, image
+
+
+def list_info(character_name):
+    character = repo.get_character(character_name.lower())
+
+    if character is None:
+        return "Character not found"
+
+    embed_list = []
+
+    for key in character:
+        if key in ["primary", "secondary", "special", "strike", "passive"]:
+            skill = repo.get_skill(character[key])
+            if character[key] != 0 and skill is not None:
+                embed, image = embed_info(character['name'], key)
+                embed_list.append([embed, image])
+
+    return embed_list
