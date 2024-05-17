@@ -12,6 +12,7 @@
 > 
 > * ###  skl 
 >>?skl info (캐릭터 이름) (primary, secondary, special, passive, strike)
+>>?skl all (캐릭터 이름) (primary, secondary, special, passive, strike)
 >
 > * ### awk
 >>?awk list <br/>
