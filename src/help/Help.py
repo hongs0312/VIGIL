@@ -21,7 +21,7 @@ class Help(commands.Cog):
     async def release_command(self, ctx):
         content = ("* '아이.미' -> '아이미'로도 검색 가능하게 수정\n"
                    "* ?skl all (스트라이커 이름) 명령어 추가")
-        embed = discord.Embed(title="Release info (Ver 1.1.0)", color=0xC71585)
+        embed = discord.Embed(title="Release info (Ver 1.1.1)", color=0xC71585)
         embed.add_field(name="Release date", value="2024.05.17", inline=False)
         embed.add_field(name="Developer", value="hongs0312, sp!", inline=False)
         embed.add_field(name="Content", value=content, inline=False)
