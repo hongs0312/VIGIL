@@ -49,10 +49,8 @@ class Ability(commands.Cog):
         if character_name.replace(" ", "") == "아이미":
             character_name = "아이.미"
 
-        embed_list = list_info(character_name)
-
-        for embed, image in embed_list:
-            await ctx.send(embed=embed, file=image)
+        embed, image = list_info(character_name)
+        await ctx.send(embed=embed, file=image)
 
 
 async def setup(bot: commands.Bot) -> None:

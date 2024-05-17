@@ -1,5 +1,6 @@
 import discord
 from ability.service import repo
+from kor_eng_name import kor_eng_name
 
 
 def embed_info(character_name, skill_type):
@@ -13,7 +14,7 @@ def embed_info(character_name, skill_type):
         return "Skill not found"
 
     try:
-        image = discord.File(f"../data/ability/imgs/{skill['image']}", filename="image.png")
+        image = discord.File(f"../data/ability/skl_imgs/{skill['image']}", filename="image.png")
     except:
         image = discord.File(f"../data/rick.jpg", filename="image.png")
 
@@ -53,13 +54,36 @@ def list_info(character_name):
     if character is None:
         return "Character not found"
 
-    embed_list = []
+    eng_name = kor_eng_name[character['name']]
+    try:
+        image = discord.File(f"../data/ability/striker_imgs/{eng_name}.png", filename="image.png")
+    except:
+        image = discord.File(f"../data/rick.jpg", filename="image.png")
+
+    embed = discord.Embed(title=character['name'], color=0xC71585)
+    embed.set_thumbnail(url="attachment://image.png")
 
     for key in character:
         if key in ["primary", "secondary", "special", "strike", "passive"]:
-            skill = repo.get_skill(character[key])
-            if character[key] != 0 and skill is not None:
-                embed, image = embed_info(character['name'], key)
-                embed_list.append([embed, image])
+            if character[key] == 0:
+                continue
 
-    return embed_list
+            skill = repo.get_skill(character[key])
+
+            if key == "primary":
+                title = "* 주: "
+            elif key == "secondary":
+                title = "* 보조: "
+            elif key == "special":
+                title = "* 특수: "
+            elif key == "strike":
+                title = "* 스트라이크: "
+            elif key == "passive":
+                title = "* 패시브: "
+
+            title += skill['name']
+            text = f"cooldown: {skill['cooldown']}, damage: {skill['damage']}"
+
+            embed.add_field(name=title, value=text, inline=False)
+
+    return embed, image

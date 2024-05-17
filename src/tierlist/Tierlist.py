@@ -26,12 +26,13 @@ class Tierlist(commands.Cog):
             kor_name = "아이.미"
 
         eng_name = get_name(kor_name)
+        image = get_image(eng_name)
 
-        if eng_name == "":
+        if image is None:
             await ctx.send(f"{kor_name}은/는 골리로 적합하지 않습니다.")
             return
 
-        await ctx.send(file=get_image(eng_name))
+        await ctx.send(file=image)
 
 
 async def setup(bot: commands.Bot) -> None:
